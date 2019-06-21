@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
 import routes from './routes';
 
-function App() {
+const App = () => {
   return (
     <>
       <Header />
