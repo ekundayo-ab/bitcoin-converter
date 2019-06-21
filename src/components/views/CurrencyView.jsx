@@ -43,6 +43,8 @@ const Currency = ({ history }) => {
         to convert from today's Bitcoin value.`}
       />
 
+      <div className="ui hidden divider"></div>
+
       <form onSubmit={handleSubmit} className="ui massive form">
         <div className="currencies">
           {

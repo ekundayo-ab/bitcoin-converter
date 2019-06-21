@@ -31,6 +31,8 @@ const BasicInfo = ({ history }) => {
   return (
     <StyledBasicInfo className="ui raised very padded text container segment">
       <SegmentHeader icon="user" title="What is your name?" />
+      
+      <div className="ui hidden divider"></div>
 
       <form onSubmit={handleSubmit} className="ui massive form">
         <div className={`ui field fluid input ${nameError && 'error'}`}>

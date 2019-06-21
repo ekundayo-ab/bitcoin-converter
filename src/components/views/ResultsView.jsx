@@ -13,6 +13,8 @@ const Results = () => {
         title="1 BTC converted to currencies below"
       />
 
+      <div className="ui hidden divider"></div>
+
       <div className="ui four stackable cards">
         <div className="ui card raised">
           <div className="content">
