@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import routes from '../routes';
 
@@ -12,8 +12,10 @@ const Header = ({ history }) => {
 
   return (
     <StyledHeader className="ui center aligned header">
-      <i className="bitcoin icon"></i>
-      <div className="content">Bitcoin Converter</div>
+      <Link to="/">
+        <i className="bitcoin icon"></i>
+        <div className="content">Bitcoin Converter</div>
+      </Link>
 
       <div className="ui hidden divider"></div>
 
