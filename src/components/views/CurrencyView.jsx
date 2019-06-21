@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 
 import { headerAndSegment, message } from '../../styles/shared'
 import predefinedCurrencies from '../../core/currencies';
+import { useErrorSetter } from '../../core/hooks';
 import SegmentHeader from '../UI/SegmentHeader';
 
 const Currency = ({ history }) => {
   const [currencies, setCurrencies] = useState([])
-  const [currenciesError, setCurrenciesError] = useState(false)
-
-  const isFirstRun = useRef(true);
+  const [currenciesError, setCurrenciesError] = useErrorSetter(!!currencies.length)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -33,17 +32,6 @@ const Currency = ({ history }) => {
       return [...existingCurrencies.filter(currency => currency !== code)]
     })
   }
-
-  useEffect(() => {
-    if (isFirstRun.current) {
-      isFirstRun.current = false;
-      return;
-    }
-
-    console.log(currencies)
-    if (!currencies.length) { setCurrenciesError(true) }
-    if (currencies.length && currenciesError) { setCurrenciesError(false) }
-  }, [currencies, currenciesError])
 
   const rbc = localStorage.rbc ? JSON.parse(localStorage.rbc) : ''
 

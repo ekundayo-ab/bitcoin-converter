@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import styled from 'styled-components';
 
 import { headerAndSegment, message } from '../../styles/shared'
 import SegmentHeader from '../UI/SegmentHeader';
+import { useErrorSetter } from '../../core/hooks';
 
 const BasicInfo = ({ history }) => {
   useLayoutEffect(()=> {
@@ -13,9 +14,7 @@ const BasicInfo = ({ history }) => {
   },[history, history.location.pathname]);
 
   const [name, setName] = useState('')
-  const [nameError, setNameError] = useState(false)
-
-  const isFirstRun = useRef(true);
+  const [nameError, setNameError] = useErrorSetter(!!name)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -28,16 +27,6 @@ const BasicInfo = ({ history }) => {
     localStorage.setItem('rbc', JSON.stringify({ name }))
     history.push('/currencies')
   }
-
-  useEffect(() => {
-    if (isFirstRun.current) {
-      isFirstRun.current = false;
-      return;
-    }
-
-    if (!name) { setNameError(true) }
-    if (name && nameError) { setNameError(false) }
-  }, [name, nameError])
 
   return (
     <StyledBasicInfo className="ui raised very padded text container segment">
