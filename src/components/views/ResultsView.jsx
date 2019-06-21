@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { headerAndSegment } from '../../styles/shared'
 import SegmentHeader from '../UI/SegmentHeader';
 
-const Results = () => {
+const ResultsView = () => {
   return (
     <StyledResults className="ui raised very padded text container segment">
       <SegmentHeader
@@ -67,4 +67,4 @@ const StyledResults = styled.div`
   ${headerAndSegment}
 `;
 
-export default Results
+export default ResultsView

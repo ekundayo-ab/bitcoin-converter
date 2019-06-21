@@ -6,7 +6,7 @@ import predefinedCurrencies from '../../core/currencies';
 import { useErrorSetter } from '../../core/hooks';
 import SegmentHeader from '../UI/SegmentHeader';
 
-const Currency = ({ history }) => {
+const CurrencyView = ({ history }) => {
   const [currencies, setCurrencies] = useState([])
   const [currenciesError, setCurrenciesError] = useErrorSetter(!!currencies.length)
 
@@ -94,4 +94,4 @@ const StyledCurrency = styled.div`
   }
 `;
 
-export default Currency
+export default CurrencyView

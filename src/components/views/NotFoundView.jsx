@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { headerAndSegment } from '../../styles/shared'
 import SegmentHeader from '../UI/SegmentHeader';
 
-const NotFound = () => {
+const NotFoundView = () => {
   return (
     <StyledNotFound className="ui raised very padded text container segment">
       <SegmentHeader icon="bitcoin" title="Page not found" />
@@ -19,4 +19,4 @@ const StyledNotFound = styled.div`
   ${headerAndSegment}
 `;
 
-export default NotFound;
+export default NotFoundView;
