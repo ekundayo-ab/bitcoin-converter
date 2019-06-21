@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { withRouter, Link } from 'react-router-dom';
 
-import routes from '../routes';
+import routes from '../../routes';
 
 const Header = ({ history }) => {
   const selectCurrentRouteTitle = (routePath) => {

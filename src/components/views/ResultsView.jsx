@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { headerAndSegment } from '../styles/shared'
-import SegmentHeader from './SegmentHeader';
+import { headerAndSegment } from '../../styles/shared'
+import SegmentHeader from '../UI/SegmentHeader';
 
 const Results = () => {
   return (

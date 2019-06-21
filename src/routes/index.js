@@ -1,7 +1,7 @@
-import BasicInfo from "../components/BasicInfo";
-import Currency from "../components/Currency";
-import NotFound from "../components/NotFound";
-import Results from "../components/Results";
+import BasicInfo from "../components/views/BasicInfoView";
+import Currency from "../components/views/CurrencyView";
+import NotFound from "../components/views/NotFoundView";
+import Results from "../components/views/ResultsView";
 
 export default [
   {

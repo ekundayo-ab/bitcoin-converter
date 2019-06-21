@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components';
 
-import { headerAndSegment, message } from '../styles/shared'
-import SegmentHeader from './SegmentHeader';
+import { headerAndSegment, message } from '../../styles/shared'
+import SegmentHeader from '../UI/SegmentHeader';
 
 const BasicInfo = ({ history }) => {
   useLayoutEffect(()=> {
