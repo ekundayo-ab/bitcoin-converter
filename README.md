@@ -1,5 +1,5 @@
 # Bitcoin Converter
-An application for converting currencies into their bitcoin value. View it live here https://react-bitcoin-converter.netlify.com/currencies
+An application for converting currencies into their bitcoin value. View it live here https://react-bitcoin-converter.netlify.com
 
 ### Basic Information View
 ![Basic Info](screenshots/basic_info.png?raw=true "Basic Info")
