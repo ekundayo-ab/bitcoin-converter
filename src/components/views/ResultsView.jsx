@@ -11,7 +11,13 @@ const ResultsView = ({ history }) => {
 
   useEffect(() => {
     setResults(history.location.state.currenciesInBTC)
-  }, [history, results, results.length])
+
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) {
+        history.push('/currencies')
+      }
+    }, false);
+  }, [history, results])
 
   return (
     <StyledResults className="ui raised very padded text container segment">
@@ -38,7 +44,9 @@ const ResultsView = ({ history }) => {
       </div>
 
       <div className="ui hidden divider"></div>
-      <Link to="/currencies" className="ui fluid massive button">Set Currencies</Link>
+      <Link to="/currencies" className="ui fluid massive button">
+        <i className="icon angle left"></i> Set Currencies
+      </Link>
     </StyledResults>
   )
 }
