@@ -2,13 +2,13 @@
 An application for converting currencies into their bitcoin value. View it live here https://react-bitcoin-converter.netlify.com/currencies
 
 ### Basic Information View
-![Basic Info](basic_info.png?raw=true "Basic Info")
+![Basic Info](screenshots/basic_info.png?raw=true "Basic Info")
 
 ### Choose Currencies View
-![Choose Currencies](choose_currencies.png?raw=true "Choose Currencies")
+![Choose Currencies](screenshots/choose_currencies.png?raw=true "Choose Currencies")
 
 ### Conversions View
-![Conversions](conversions.png?raw=true "Conversions")
+![Conversions](screenshots/conversions.png?raw=true "Conversions")
 
 ### Requirements
 - NodeJS and NPM
