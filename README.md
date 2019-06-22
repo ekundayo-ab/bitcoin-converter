@@ -1,5 +1,5 @@
 # Bitcoin Converter
-An application for converting currencies into their bitcoin value.
+An application for converting currencies into their bitcoin value. View it live here https://react-bitcoin-converter.netlify.com/currencies
 
 ### Basic Information View
 ![Basic Info](basic_info.png?raw=true "Basic Info")
@@ -15,7 +15,7 @@ An application for converting currencies into their bitcoin value.
 - Rename the `.env.sample` file to `.env` and fill the variables according to values gotten from https://bitcoinaverage.com/en/apikeys Register or Sign In to get the keys
 
 ### Installation
-- Clone this repository `git clone`
+- Clone this repository `git clone https://github.com/ekundayo-ab/react-bitcoin-converter`
 - `cd` into project directory on the terminal `cd react-bitcoin-converter`
 - Install dependencies `npm install`
 

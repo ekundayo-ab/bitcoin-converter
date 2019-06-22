@@ -25,7 +25,6 @@ const Header = ({ history }) => {
 
       <div className="ui hidden divider"></div>
       <div className="ui hidden divider"></div>
-      <div className="ui hidden divider"></div>
     </StyledHeader>
   )
 }
