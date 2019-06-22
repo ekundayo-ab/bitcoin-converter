@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { headerAndSegment } from '../../styles/shared'
 import SegmentHeader from '../UI/SegmentHeader';
+import CurrencyCard from '../UI/CurrencyCard';
 
-const ResultsView = () => {
+const ResultsView = ({ history }) => {
+  const [results, setResults] = useState([])
+
+  useEffect(() => {
+    setResults(history.location.state.currenciesInBTC)
+  }, [history, results, results.length])
+
   return (
     <StyledResults className="ui raised very padded text container segment">
       <SegmentHeader
@@ -16,47 +23,20 @@ const ResultsView = () => {
       <div className="ui hidden divider"></div>
 
       <div className="ui four stackable cards">
-        <div className="ui card raised">
-          <div className="content">
-            <div className="header">$500</div>
-            <div className="description">
-              U.S. Dollar
-            </div>
-          </div>
-        </div>
-        <div className="ui card raised">
-          <div className="content">
-            <div className="header">¥3600.6</div>
-            <div className="description">
-              Japanese Yen
-            </div>
-          </div>
-        </div>
-        <div className="ui card raised">
-          <div className="content">
-            <div className="header">₦2500</div>
-            <div className="description">
-              Nigerian Naira
-            </div>
-          </div>
-        </div>
-        <div className="ui card raised">
-          <div className="content">
-            <div className="header">$500</div>
-            <div className="description">
-              U.S. Dollar
-            </div>
-          </div>
-        </div>
-        <div className="ui card raised">
-          <div className="content">
-            <div className="header">$500</div>
-            <div className="description">
-              U.S. Dollar
-            </div>
-          </div>
-        </div>
+        {
+          results.map(result =>
+            <CurrencyCard
+              key={result.code}
+              name={result.name}
+              code={result.code}
+              price={result.price}
+              symbol={result.symbol}
+            />
+          )
+        }
+
       </div>
+
       <div className="ui hidden divider"></div>
       <Link to="/currencies" className="ui fluid massive button">Set Currencies</Link>
     </StyledResults>

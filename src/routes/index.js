@@ -1,29 +1,29 @@
-import BasicInfo from "../components/views/BasicInfoView";
-import Currency from "../components/views/CurrencyView";
-import NotFound from "../components/views/NotFoundView";
-import Results from "../components/views/ResultsView";
+import BasicInfoView from "../components/views/BasicInfoView";
+import CurrencyView from "../components/views/CurrencyView";
+import NotFoundView from "../components/views/NotFoundView";
+import ResultsView from "../components/views/ResultsView";
 
 export default [
   {
     exact: true,
     path: '/',
-    component: BasicInfo,
+    component: BasicInfoView,
     title: "let's know you"
   },
   {
     exact: true,
     path: '/currencies',
-    component: Currency,
+    component: CurrencyView,
     title: "choose currencies"
   },
   {
     exact: true,
     path: '/results',
-    component: Results,
+    component: ResultsView,
     title: "whoops!!! conversions here"
   },
   {
     path: '*',
-    component: NotFound
+    component: NotFoundView
   }
 ]

@@ -5,12 +5,14 @@ import { headerAndSegment, message } from '../../styles/shared'
 import predefinedCurrencies from '../../core/currencies';
 import { useErrorSetter } from '../../core/hooks';
 import SegmentHeader from '../UI/SegmentHeader';
+import { convertToSelectedCurrencies } from '../../core/api';
 
 const CurrencyView = ({ history }) => {
   const [currencies, setCurrencies] = useState([])
   const [currenciesError, setCurrenciesError] = useErrorSetter(!!currencies.length)
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
     if (!currencies.length) {
@@ -18,7 +20,9 @@ const CurrencyView = ({ history }) => {
       return
     }
 
-    history.push('/results')
+    setLoading(true)
+    const currenciesInBTC = await convertToSelectedCurrencies(currencies)
+    history.push('/results', { currenciesInBTC })
   }
 
   const handleChange = (event, code) => {
@@ -69,7 +73,9 @@ const CurrencyView = ({ history }) => {
           </div>
         }
 
-        <button type="submit" className="ui fluid massive button">See Conversions</button>
+        <button type="submit" disabled={loading} className={`ui fluid massive button ${loading && 'loading'}`}>
+          See Conversions
+        </button>
       </form>
     </StyledCurrency>
   )
